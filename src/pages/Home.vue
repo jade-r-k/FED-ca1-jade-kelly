@@ -6,6 +6,19 @@
       <br>
       <input type="text" v-model="term" />
       <b-button variant="primary" >Search</b-button>
+      <div>
+        <b-card
+        class="countries mx-auto"
+        header="Countries">
+          <b-list-group flush>
+          <b-list-group-item
+            v-for="country in countries"
+            :key="country.id"
+            href="#"
+          >{{ country.name.common }}</b-list-group-item>
+        </b-list-group>
+        </b-card>
+      </div>
   </div>
 </template>
 
@@ -17,7 +30,7 @@ export default {
   name: 'home',
   data() {
     return {
-      countries: [],
+      countries: null,
       term: "",
 
     };
@@ -29,7 +42,8 @@ export default {
     allCountry() {
       axios.get(`${COUNTRY_URL}/all`)
       .then((response) => {
-        console.log(response)
+        console.log(response.data)
+        this.countries = response.data
       })
       .catch(error => console.log(error))
     }
@@ -42,5 +56,8 @@ export default {
 <style>
 .home {
     text-align: center;
+}
+.countries{
+  width: 730px;
 }
 </style>

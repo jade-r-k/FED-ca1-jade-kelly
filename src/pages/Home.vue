@@ -1,19 +1,21 @@
 <template>
   <div class="home">
       <br>
-      Search for a country!
+      <h4>Search for a country!</h4>
       <br>
-      
-      <b-input-group class="mx-auto w-50">
+
+      <div class="col-lg-3 col-md-5 col-sm-5 mx-auto">
+        <b-input-group>
         <input class="form-control" type="text" v-model="term" v-on:keyup.enter="searchCountryName()" />
         <b-button variant="success" @click="searchCountryName()">Search</b-button>
       </b-input-group>
+      </div>
 
       <br>
       
       <div>
         <b-card
-        class="w-75 mx-auto"
+        class="col-lg-4 col-md-6 col-sm-6 mx-auto"
         bg-variant="success">
           <b-list-group flush>
           <b-list-group-item>
@@ -25,6 +27,7 @@
         </b-list-group>
         </b-card>
       </div>
+      <br>
   </div>
 </template>
 

@@ -1,10 +1,9 @@
-
 <template>
   <div id="nav">
       <b-navbar variant="success">
           <b-navbar-brand class="mx-auto">
               <router-link
-              style="text-decoration: none; color: #fff; font-size: 28px"
+              style="text-decoration: none; color: #fff; font-size: 28px;"
                 to="/">
               <Icon icon="gis:earth" color="white" width="50" height="50" />
               EARTH</router-link>

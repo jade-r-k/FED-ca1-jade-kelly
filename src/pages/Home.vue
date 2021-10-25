@@ -1,21 +1,28 @@
 <template>
   <div class="home">
-      <img alt="Vue logo" src="../assets/logo.png">
       <br>
       Search for a country!
       <br>
-      <input type="text" v-model="term" />
-      <b-button variant="primary" >Search</b-button>
+      
+      <b-input-group class="mx-auto w-50">
+        <input class="form-control" type="text" v-model="term" v-on:keyup.enter="searchCountryName()" />
+        <b-button variant="success" @click="searchCountryName()">Search</b-button>
+      </b-input-group>
+
+      <br>
+      
       <div>
         <b-card
-        class="countries mx-auto"
-        header="Countries">
+        class="w-75 mx-auto"
+        bg-variant="success"
+        text-variant="white">
           <b-list-group flush>
-          <b-list-group-item
-            v-for="country in countries"
+          <b-list-group-item>
+          <AllCountryViewer
+          v-for="country in countries"
             :key="country.id"
-            href="#"
-          >{{ country.name.common }}</b-list-group-item>
+            :country="country"/>
+          </b-list-group-item>
         </b-list-group>
         </b-card>
       </div>
@@ -24,6 +31,7 @@
 
 <script>
 import axios from 'axios';
+import AllCountryViewer from '@/components/AllCountryViewer'
 const COUNTRY_URL = "https://restcountries.com/v3.1"
 
 export default {
@@ -46,9 +54,28 @@ export default {
         this.countries = response.data
       })
       .catch(error => console.log(error))
-    }
+    },
+    searchCountryName() {
+      if(!this.term) {
+                alert("Please enter a search term!");
+                return
+            }
+            axios.get(`${COUNTRY_URL}/name/${this.term}`)
+            .then((response) => {
+                console.log(response.data)
+                this.countries = response.data
+            }
+            )
+            .catch((error) => {
+              console.log(error)
+              this.allCountry();
+              alert("Country was not found, check your spelling or find it in the list below.");
+              })
+    },
+
   },
   components: {
+    AllCountryViewer
   }
 }
 </script>
@@ -59,5 +86,14 @@ export default {
 }
 .countries{
   width: 730px;
+}
+.green-back{
+  background: #2ECC71;
+}
+
+.center-block {
+    display: table;  /* Instead of display:block */
+    margin-left: auto;
+    margin-right: auto;
 }
 </style>

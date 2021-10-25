@@ -1,25 +1,33 @@
+
 <template>
   <div id="nav">
-      <router-link to="/">Home</router-link>
-      <router-link to="/about">About</router-link>
+      <b-navbar variant="success">
+          <b-navbar-brand class="mx-auto">
+              <router-link
+              style="text-decoration: none; color: #fff; font-size: 28px"
+                to="/">
+              <Icon icon="gis:earth" color="white" width="50" height="50" />
+              EARTH</router-link>
+          </b-navbar-brand>
+      </b-navbar>
   </div>
 </template>
 
 <script>
+import { Icon } from '@iconify/vue2';
+export default {
+	components: {
+		Icon,
+	},
+};
 </script>
 
 <style>
 #nav {
-    padding: 30px;
     text-align: center;
 }
 
 #nav a {
     font-weight: bold;
-    color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-    color: #42b983;
 }
 </style>

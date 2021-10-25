@@ -14,8 +14,7 @@
       <div>
         <b-card
         class="w-75 mx-auto"
-        bg-variant="success"
-        text-variant="white">
+        bg-variant="success">
           <b-list-group flush>
           <b-list-group-item>
           <AllCountryViewer

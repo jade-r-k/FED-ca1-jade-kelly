@@ -1,8 +1,14 @@
 <template>
   <div>
     <p>
+      <router-link
+      :to="{name: 'viewcountry', params: {country: country.name.official}}"
+      >
       <img :src="country.flags.png" width="20" height="15">
-      <router-link :to="{name: 'viewcountry', params: {country: country.name.official}}"> {{ country.name.common }}</router-link >
+      </router-link>
+      <router-link
+        style="text-decoration: none; color: #000;"
+        :to="{name: 'viewcountry', params: {country: country.name.official}}"> {{ country.name.common }}</router-link >
     </p>
     <hr>
   </div>

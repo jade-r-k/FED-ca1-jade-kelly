@@ -1,10 +1,12 @@
 <template>
   <div class="viewCountry">
+    <br>
       <CountryViewer
       v-for="country in countries"
       :key="country.id"
       :country="country"
        />
+       <br>
   </div>
 </template>
 

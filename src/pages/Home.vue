@@ -18,12 +18,10 @@
         class="col-lg-4 col-md-6 col-sm-6 mx-auto"
         bg-variant="success">
           <b-list-group flush>
-          <b-list-group-item>
           <AllCountryViewer
           v-for="country in countries"
             :key="country.id"
             :country="country"/>
-          </b-list-group-item>
         </b-list-group>
         </b-card>
       </div>

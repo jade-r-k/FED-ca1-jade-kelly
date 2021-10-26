@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>
+    <b-list-group-item>
       <router-link
       :to="{name: 'viewcountry', params: {country: country.name.official}}"
       >
@@ -9,8 +9,7 @@
       <router-link
         style="text-decoration: none; color: #000; font-size: 16px;"
         :to="{name: 'viewcountry', params: {country: country.name.official}}"> {{ country.name.common }}</router-link >
-    </p>
-    <hr>
+    </b-list-group-item>
   </div>
 </template>
 

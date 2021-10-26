@@ -1,22 +1,39 @@
 <template>
   <div class="viewCountry">
-      This is the View Country page!
+      <CountryViewer
+      v-for="country in countries"
+      :key="country.id"
+      :country="country"
+       />
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+import CountryViewer from '@/components/CountryViewer'
 
 export default {
   name: 'viewCountry',
+  data(){
+    return {
+      countries: null,
+    }
+  },
   components: {
+    CountryViewer
   },
   mounted(){
-    axios.get(`https://restcountries.com/v3.1/name/${this.$route.params.country}?fullText=true`)
+    this.country();
+  },
+  methods: {
+    country() {
+      axios.get(`https://restcountries.com/v3.1/name/${this.$route.params.country}?fullText=true`)
          .then(response => {
            console.log(response.data)
+           this.countries = response.data
          })
          .catch(error => console.log(error))
+    },
   }
 }
 </script>

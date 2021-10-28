@@ -14,6 +14,7 @@
       <br>
       
       <div>
+        
         <b-card
         class="col-lg-4 col-md-6 col-sm-6 mx-auto"
         bg-variant="success">
@@ -40,7 +41,6 @@ export default {
     return {
       countries: null,
       term: "",
-
     };
   },
   mounted() {

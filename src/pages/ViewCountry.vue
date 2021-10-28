@@ -22,7 +22,7 @@ export default {
     }
   },
   components: {
-    CountryViewer
+    CountryViewer,
   },
   mounted(){
     this.country();

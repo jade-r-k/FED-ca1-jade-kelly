@@ -4,7 +4,7 @@
       <router-link
       :to="{name: 'viewcountry', params: {country: country.name.official}}"
       >
-      <img :src="country.flags.png" width="20" height="15">
+      <img :src="country.flags.png" style="border: 1px solid #000;" width="20" height="15">
       </router-link>
       <router-link
         style="text-decoration: none; color: #000; font-size: 16px;"

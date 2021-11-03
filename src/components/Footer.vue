@@ -1,6 +1,7 @@
 <template>
   <div id="footer">
       <footer class="bg-success" >
+        <!-- Links to About.vue -->
               <router-link
                 style="text-decoration: none; color: #fff; font-size: 18px;"
                 :to="{name: 'about'}">

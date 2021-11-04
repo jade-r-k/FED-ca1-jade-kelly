@@ -1,5 +1,6 @@
 # ca1-jade-kelly
 ## FED CA1 by Jade Kelly N00191459
+## Firebase Hosting: https://fed-ca1---jade-kelly.firebaseapp.com
 ## Figma Wireframe: https://www.figma.com/file/2P1USdpdPEWuujqfcVCeOW/FED-CA1-Jade-Kelly-N00191459?node-id=0%3A1
 
 ## Project setup

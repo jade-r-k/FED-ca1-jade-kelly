@@ -1,3 +1,4 @@
-# Project done in my Third Year at IADT studying BSc (Hons) in Creative Computing.
-## Created using Vue. API used is https://restcountries.com
-## Firebase Hosting: https://fed-ca1---jade-kelly.firebaseapp.com
+# Vue project that consumes REST countries API and is hosted using Firebase.
+## Completed my third year at IADT studying BSc (Hons) Creative Computing.
+## Firebase Hosted site: https://fed-ca1---jade-kelly.firebaseapp.com
+## API used is https://restcountries.com
